@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     // Actions
     
     @IBAction func calculateButtonPressed(_ sender: Any) {
-        
+        print("Calculate button pressed")
     }
     
     @IBAction func metricButtonPressed(_ sender: Any) {
@@ -27,4 +27,21 @@ class ViewController: UIViewController {
     }
     
     // Helper functions
+    
+    func cookTimeInPounds(weight: Double) -> Double {
+        let durationInMinutes = weight * 15.0
+        return durationInMinutes
+    }
+    
+    func cookTimeInKilograms(weight: Double) -> Double {
+        var durationInMinutes: Double
+        
+        if weight >= 4 {
+            durationInMinutes = 20.0 * weight + 90
+        } else {
+            durationInMinutes = 20.0 * weight + 70
+        }
+        
+        return durationInMinutes
+    }
 }

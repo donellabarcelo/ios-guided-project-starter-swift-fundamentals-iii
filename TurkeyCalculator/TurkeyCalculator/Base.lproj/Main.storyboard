@@ -64,8 +64,8 @@
                                     <constraint firstItem="c84-lN-9u6" firstAttribute="leading" secondItem="sDB-bT-zsr" secondAttribute="leading" id="HCM-RE-Jxf"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="741-x8-qez">
-                                <rect key="frame" x="339" y="212" width="59" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="741-x8-qez">
+                                <rect key="frame" x="178" y="212" width="59" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Metric"/>
                                 <connections>
