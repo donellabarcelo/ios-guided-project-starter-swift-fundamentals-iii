@@ -19,11 +19,33 @@ class ViewController: UIViewController {
     // Actions
     
     @IBAction func calculateButtonPressed(_ sender: Any) {
-        print("Calculate button pressed")
+        
+        guard let turkeyWeightString = turkeyWeightTextField.text else { return }
+        
+        // See if the text in the text field is a valid Double
+        
+        guard let turkeyWeight = Double(turkeyWeightString) else {
+            print("Invalid number. Unable to initialize a double from the string.")
+            return
+        }
+        
+        // Based on the metric button's .isSelected property, call one of the cook time functions
+        
+        var durationInMinutes: Double
+        
+        if metricButton.isSelected {
+            durationInMinutes = cookTimeInKilograms(weight: turkeyWeight)
+        } else {
+            durationInMinutes = cookTimeInPounds(weight: turkeyWeight)
+        }
+        
+        // Show cook time in minutes
+        cookTimeTextField.text = "Cook for \(durationInMinutes) minutes"
     }
     
     @IBAction func metricButtonPressed(_ sender: Any) {
-        
+//        metricButton.isSelected = !metricButton.isSelected
+        metricButton.isSelected.toggle() // Does the samething as the above commented line
     }
     
     // Helper functions
@@ -45,4 +67,3 @@ class ViewController: UIViewController {
         return durationInMinutes
     }
 }
-
